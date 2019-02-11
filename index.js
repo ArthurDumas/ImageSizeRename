@@ -1,8 +1,8 @@
-var fs = require('fs');
+const fs = require('fs');
 const path = require('path');
-var sizeOf = require('image-size');
+const sizeOf = require('image-size');
 
-var rootFolder = "C:\\temp\\Illustrator exports";
+const rootFolder = "C:\\temp\\Illustrator exports";
 
 filewalker(rootFolder, function(err, data) {
     if (err) {
@@ -25,7 +25,7 @@ function needToRename(filepath) {
     var needToRename = extmatch && !RegExp(".*-[0-9]+x[0-9]+$").test(parts.name);
 
     if (extmatch && !needToRename) {
-        console.log("Skiped " + filepath);
+        console.log("Skipped " + filepath);
     }
 
     return needToRename;
